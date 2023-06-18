@@ -8,7 +8,7 @@ let getHomepage = async (req, res) => {
 
 let getDetailPage = async(req, res) => {
     let userID = req.params.id;
-    let user = await pool.execute(`SELECT * FROM user where id = ?`, [userID])
+    let user = await pool.execute(`SELECT * FROM user where id = ?`,[userID])
    
     return res.send(JSON.stringify(user[0]))
 }
