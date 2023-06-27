@@ -3,9 +3,11 @@ let router = express.Router();
 import homeController from '../controller/homeController.js';
 const initWebRoute = (app) => {
     //    router.get('/', homeController.getHomepage);
+    
 
     router.get('/', homeController.getHomepage);
     router.get('/detail/user/:id', homeController.getDetailPage);
+    router.post('/create-new-user', homeController.createNewUser);
     router.get('/about', (req, res) => {
         res.send (`I'm Nam!`)
     })

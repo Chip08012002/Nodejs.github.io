@@ -30,3 +30,18 @@ body {
     text-decoration: none;
     color: black;
 }
+.create-user-container {
+    padding: 15px;
+    text-align: center;
+}
+.create-user-container label {
+    display: block;
+    
+}
+.form-user {
+    padding: 10px;
+}
+.form-user input {
+    width: 20%;
+}
+

@@ -13,7 +13,14 @@ let getDetailPage = async(req, res) => {
     return res.send(JSON.stringify(user[0]))
 }
 
+let createNewUser = async (req, res) => {
+    console.log(req.body)
+    let {firstname, lastname, email, address} = req.body;
+    await pool.execute('INSERT INTO user (firstname, lastname, email, address) values (?, ?, ?, ?)',
+    [firstname, lastname, email, address]);
+   return res.redirect('/')
+}
 
 export default {
-    getHomepage, getDetailPage
+    getHomepage, getDetailPage, createNewUser
 }
